@@ -284,7 +284,7 @@ body.no-scroll {
     grid-template: "partner logo burger" auto/3fr 8fr 2fr;
   }
 }
-@media (max-width: 1025px) {
+@media (max-width: 1201px) {
   .header {
     height: 5rem;
   }
@@ -301,6 +301,10 @@ body.no-scroll {
 .header__left img {
   height: 100%;
   width: 100%;
+  max-height: 3.5rem;
+}
+.header__left .header__logo:focus-within img {
+  outline: solid #70ff00;
 }
 
 .header__right {
@@ -342,7 +346,7 @@ body.no-scroll {
   .nav {
     width: 32rem;
     padding: 2rem;
-    top: 6rem;
+    top: 5rem;
     right: 0;
     bottom: 0;
     z-index: 1000;
@@ -605,6 +609,17 @@ body.no-scroll {
   gap: 2rem;
   place-content: center;
   z-index: 1;
+  animation: up 1s cubic-bezier(0.44, 0.38, 0.34, 1.22);
+}
+@keyframes up {
+  from {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 @media (max-width: 1025px) {
   .hero__content {
@@ -886,6 +901,7 @@ body.no-scroll {
 }
 .shop__part img {
   width: fit-content;
+  height: fit-content;
   margin: 0 auto;
   background: #fff;
   box-shadow: 0 30px 20px -20px rgba(0, 0, 0, 0.2);
@@ -899,13 +915,12 @@ body.no-scroll {
 }
 @media (max-width: 1025px) {
   .shop__part img {
-    height: 30vmin;
-    min-height: 25rem;
+    width: 80%;
   }
 }
-@media (max-width: 769px) {
+@media (max-width: 598px) {
   .shop__part img {
-    height: unset;
+    width: 100%;
   }
 }
 @media (max-width: 1201px) {
@@ -1150,8 +1165,8 @@ body.no-scroll {
   width: 100%;
   height: fit-content;
 }
-.history__part a:focus-within img,
-.history__part a:focus-within {
+.history__part:focus-within,
+.history__part a:focus-within h3 {
   outline: solid #70ff00;
 }
 @media (max-width: 1025px) {
@@ -1216,20 +1231,18 @@ body.no-scroll {
   border-radius: 1rem;
   overflow: hidden;
 }
-.home__part a:focus-within img,
-.home__part a:focus-within {
+.home__part:focus-within,
+.home__part a:focus-within h3 {
   outline: solid #70ff00;
 }
-.home__part:hover .home__text {
-  color: #fff;
-  background: linear-gradient(to bottom, rgba(29, 49, 253, 0.6) 10%, rgba(246, 253, 39, 0.6) 90%);
-}
-.home__part:hover h3 {
-  color: #fff;
+@media (min-width: 1026px) {
+  .home__part:hover .home__text {
+    color: #fff;
+    background: linear-gradient(to bottom, rgba(29, 49, 253, 0.6) 10%, rgba(246, 253, 39, 0.6) 90%);
+  }
 }
 @media (max-width: 1025px) {
   .home__part {
-    grid-template-rows: 1fr 40%;
     width: 40%;
   }
 }
@@ -1245,7 +1258,6 @@ body.no-scroll {
 
 .home__text {
   padding: clamp(2rem, 2.5vw, 2.5rem);
-  gap: 2rem;
   text-align: center;
   background: #fff;
   transition: background 0.3s linear;
@@ -1253,16 +1265,6 @@ body.no-scroll {
 .home__text h3 {
   font-size: clamp(1.6rem, 1.8vw, 2.4rem);
   transition: color 0.3s linear;
-}
-@media (max-width: 1025px) {
-  .home__text {
-    gap: 1rem;
-  }
-}
-@media (max-width: 598px) {
-  .home__text h3 {
-    font-size: 1.8rem;
-  }
 }
 
 .stories {
@@ -1351,6 +1353,7 @@ video {
 .respect img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .respect__text {
@@ -1371,6 +1374,9 @@ video {
   -moz-box-shadow: 0 0 10px #000000;
   -webkit-box-shadow: 0 0 10px #000000;
   box-shadow: 0 0 10px #000000;
+}
+.respect__text a:focus-within {
+  outline: solid #70ff00;
 }
 @media (max-width: 598px) {
   .respect__text {

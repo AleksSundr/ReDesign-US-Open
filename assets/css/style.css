@@ -255,6 +255,13 @@ body.no-scroll {
     }
 }
 
+.bg_section {
+    display: grid;
+    padding: 2rem;
+    gap: 2rem;
+    background: rgba(255, 255, 255, 0.6);
+}
+
 .container {
     max-width: 70rem;
     margin: 0 auto;
@@ -481,6 +488,11 @@ body.no-scroll {
     position: relative;
 }
 
+.search__box img {
+    width: 100%;
+    height: 100%;
+}
+
 .search__box_navbar {
     display: none;
     grid-area: search;
@@ -603,7 +615,7 @@ body.no-scroll {
     }
 }
 
-/* On click on search hide ibm image */
+/* On click on search hide IBM image */
 .wide .partner {
     display: none;
 }
@@ -1001,13 +1013,6 @@ body.no-scroll {
     }
 }
 
-.shop {
-    display: grid;
-    padding: 2rem;
-    gap: 2rem;
-    background: rgba(255, 255, 255, 0.6196078431);
-}
-
 @media (max-width: 415px) {
     .shop__title {
         font-size: clamp(1.8rem, 6vw, 2.4rem);
@@ -1025,7 +1030,6 @@ body.no-scroll {
 }
 
 .shop__part {
-    position: relative;
     width: max(35rem, 20%);
     background: linear-gradient(to bottom, #fff, #e0e8b2, #fff, #fff);
     border-radius: 1rem;
@@ -1033,7 +1037,9 @@ body.no-scroll {
 }
 
 .shop__part img {
-    width: auto;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
     margin: 0 auto;
     background: #fff;
     box-shadow: 0 30px 20px -20px rgba(0, 0, 0, 0.2);
@@ -1116,7 +1122,7 @@ body.no-scroll {
 .shop__action {
     position: absolute;
     padding: 1.5em 0.8em;
-    opacity: 0;
+    opacity: 1;
     left: 100%;
     top: 50%;
     -webkit-transform: translateY(-50%);
@@ -1148,10 +1154,7 @@ body.no-scroll {
 }
 
 .fan {
-    display: grid;
-    padding: 2rem;
     gap: 10rem;
-    background: rgba(255, 255, 255, 0.6196078431);
 }
 
 @media (max-width: 1201px) {
@@ -1174,6 +1177,7 @@ body.no-scroll {
 
 .fan__part img {
     height: 100%;
+    width: 100%;
     min-height: 25rem;
     -o-object-fit: cover;
     object-fit: cover;
@@ -1246,7 +1250,6 @@ body.no-scroll {
 .info {
     display: -ms-flexbox;
     display: flex;
-    padding: 5rem 0;
     padding: clamp(3rem, 4vw, 5rem) 0;
     gap: 3rem;
     -ms-flex-pack: distribute;
@@ -1323,13 +1326,6 @@ body.no-scroll {
     outline: none;
 }
 
-.history {
-    display: grid;
-    padding: 2rem;
-    gap: 2rem;
-    background: rgba(255, 255, 255, 0.6196078431);
-}
-
 .history__title {
     font-size: clamp(1.8rem, 5vw, 2.4rem);
 }
@@ -1359,6 +1355,9 @@ body.no-scroll {
 
 .history__part img {
     width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
 }
 
 .history__part a:focus-within img,
@@ -1409,13 +1408,6 @@ body.no-scroll {
     .history__text h3 {
         font-size: 1.8rem;
     }
-}
-
-.home {
-    display: grid;
-    padding: 2rem;
-    gap: 2rem;
-    background: rgba(255, 255, 255, 0.6196078431);
 }
 
 .home__title {
@@ -1647,10 +1639,9 @@ video {
 }
 
 .respect__text p span {
-    color: blue;
+    color: rgb(98, 98, 208);
     font-weight: 700;
     text-transform: uppercase;
-    text-shadow: 3px 3px 20px #fff;
 }
 
 footer {
@@ -1658,7 +1649,13 @@ footer {
     grid-area: footer;
     padding: 2rem;
     gap: 2rem;
-    background: rgb(33, 33, 198);
+    background: rgb(66, 66, 192);
+}
+
+@media (max-width: 481px) {
+    footer {
+        row-gap: 1rem;
+    }
 }
 
 .footer__item {
@@ -1695,6 +1692,20 @@ footer {
     width: 33%;
 }
 
+@media (max-width: 481px) {
+    .footer__item--top {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-pack: center;
+        justify-content: center;
+        row-gap: 1rem;
+    }
+
+    .footer__item--top > * {
+        width: auto;
+    }
+}
+
 .footer__item .membership {
     font-weight: 700;
     font-size: max(2rem, 2vw);
@@ -1714,8 +1725,12 @@ footer {
     gap: 2rem;
 }
 
+.footer__item_social div {
+    width: max(2rem, 2vw);
+}
+
 .footer__item_social a {
-    width: max(2rem, 1.5vw);
+    padding: 1rem;
 }
 
 .footer__item_social a:hover svg, .footer__item_social a:focus-within svg {
@@ -1725,6 +1740,12 @@ footer {
 .footer__item_social svg {
     fill: #fff;
     transition: fill 0.3s linear;
+}
+
+@media (max-width: 769px) {
+    .footer__item_links {
+        display: none;
+    }
 }
 
 .btn {
